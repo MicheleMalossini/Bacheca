@@ -6,6 +6,7 @@
 package client.Entities;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -15,10 +16,10 @@ public class Message {
     int ID;
     String content;
     int like;
-    int userID;
-    Date date;
+    String userID;
+    Timestamp date;
 
-    public Message(int ID,String content, int userID, Date date) {
+    public Message(int ID,String content, String userID, Timestamp date) {
         this.ID=ID;
         this.content = content;
         this.like = 0;
@@ -26,7 +27,7 @@ public class Message {
         this.date = date;
     }
     
-    public Message(String content, int userID, Date date){
+    public Message(String content, String userID, Timestamp date){
         this.content = content;
         this.like = 0;
         this.userID = userID;
@@ -41,11 +42,11 @@ public class Message {
         return like;
     }
 
-    public int getUserID() {
+    public String getUserID() {
         return userID;
     }
 
-    public Date getDate() {
+    public Timestamp getDate() {
         return date;
     }
     
@@ -61,11 +62,11 @@ public class Message {
         this.like = like;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(String userID) {
         this.userID = userID;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
     

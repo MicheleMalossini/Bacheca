@@ -10,6 +10,7 @@ import client.service.PostBuilder;
 import client.service.RequestHandler;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.sql.Timestamp;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -233,6 +234,8 @@ public class ClientGUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        RequestHandler.createMessage(jTextPane2.getText(),user.getCodice(),timestamp);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

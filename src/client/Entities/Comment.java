@@ -21,7 +21,6 @@ public class Comment {
     Timestamp date;
 
     public Comment(String content, String userID, int messageID, Timestamp date) {
-        
         this.content = content;
         this.like = 0;
         this.userID = userID;
@@ -36,6 +35,10 @@ public class Comment {
         this.userID = userID;
         this.messageID = messageID;
         this.date = date;
+    }
+    
+    public int getID() {
+        return ID;
     }
 
     public String getContent() {

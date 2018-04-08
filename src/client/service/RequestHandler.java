@@ -124,7 +124,7 @@ public class RequestHandler {
      * @param ID id dell'utente
      * @return l'utente con quel id
      */ 
-    public static User getUserByID(int ID){
+    public static User getUserByID(String ID){
         try{
             Gson gson=new Gson();
             URL url = new URL("............");//percorso server + messageID
@@ -196,8 +196,8 @@ public class RequestHandler {
      /**
       *
       */
-     public static void createMessage(int ID,String content, int userID, Date date) {
-            Message mess=new Message(ID,content,userID,date);
+     public static void createMessage(String content, String userID, Timestamp date) {
+            Message mess=new Message(content,userID,date);
             Gson gson=new Gson();
             URL url;
             
