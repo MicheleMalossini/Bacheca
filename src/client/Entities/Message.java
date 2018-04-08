@@ -25,6 +25,13 @@ public class Message {
         this.userID = userID;
         this.date = date;
     }
+    
+    public Message(String content, int userID, Date date){
+        this.content = content;
+        this.like = 0;
+        this.userID = userID;
+        this.date = date;
+    }
 
     public String getContent() {
         return content;

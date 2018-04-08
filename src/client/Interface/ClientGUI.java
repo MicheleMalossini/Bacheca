@@ -278,7 +278,7 @@ public class ClientGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ClientGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //User us=new User("michele","malossini","miki.malos@","ciao");
+        User us=new User("1","michele","malossini","miki.malos@","ciao");
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

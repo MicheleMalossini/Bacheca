@@ -13,7 +13,7 @@ import java.sql.Timestamp;
  * @author MM
  */
 public class Comment {
-    
+    int ID;
     String content;
     int like;
     String userID;
@@ -24,6 +24,15 @@ public class Comment {
         
         this.content = content;
         this.like = 0;
+        this.userID = userID;
+        this.messageID = messageID;
+        this.date = date;
+    }
+
+    public Comment(int ID, String content, int like, String userID, int messageID, Timestamp date) {
+        this.ID = ID;
+        this.content = content;
+        this.like = like;
         this.userID = userID;
         this.messageID = messageID;
         this.date = date;

@@ -298,4 +298,52 @@ public class RequestHandler {
          
     }
     
+    public static void likeMessage(int id){
+        URL url;
+        
+        try {
+            url=new URL("  ");//percorso server+id
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("PUT");
+            conn.setRequestProperty("Content-Type", "application/json");
+            
+            if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
+                            throw new RuntimeException("Failed : HTTP error code : "
+                                    + conn.getResponseCode());
+                }
+                
+            conn.disconnect();
+            
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(RequestHandler.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(RequestHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    public static void likeComment(int id){
+        URL url;
+        
+        try {
+            url=new URL("  ");//percorso server+id
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("PUT");
+            conn.setRequestProperty("Content-Type", "application/json");
+            
+            if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
+                            throw new RuntimeException("Failed : HTTP error code : "
+                                    + conn.getResponseCode());
+                }
+                
+            conn.disconnect();
+            
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(RequestHandler.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(RequestHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
 }
