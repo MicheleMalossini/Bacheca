@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 # ClientJava
 =======
@@ -15,4 +15,4 @@ bacheca-gruppo-sandrinelli created by GitHub Classroom
 2) Client JAVA (Malossini)+ Javadoc;
 3) Client Web;
 4) Database (Utenti, Messaggio, Commento) Alessandro Schioppetti;
->>>>>>> origin/master
+# Bacheca
