@@ -11,6 +11,8 @@ import client.service.RequestHandler;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -234,7 +236,7 @@ public class ClientGUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         RequestHandler.createMessage(jTextPane2.getText(),user.getCodice(),timestamp);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -244,16 +246,11 @@ public class ClientGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public void refresh(){   
-        JPanel panel=new JPanel(new GridLayout(2,2));
-        panel.setBackground(Color.red);
-        panel.add(new JButton("TEST"));
-        //jScrollPane1.getViewport().add(panel);
-        jPanel6.setLayout(new BoxLayout(jPanel6, BoxLayout.LINE_AXIS));
-        panel.setVisible(true);
-       //Constructing JPanel 1 and 2 with GridLayout of 1 row and 1 column
-        jPanel6.add(panel);
+        List<JPanel> post=new ArrayList<>();
+        for(JPanel panel:post){
+            jPanel6.add(panel);
+        }
         pack();
-     
     }
     /**
      * @param args the command line arguments
