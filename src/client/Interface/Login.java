@@ -8,6 +8,7 @@ package client.Interface;
 import client.Entities.User;
 import client.service.RequestHandler;
 import client.service.Utils;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -245,16 +246,15 @@ public class Login extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         User us=RequestHandler.getUserByEmail(jTextField5.getText());
-        
-   
+      
         if(us == null && Utils.checkPassword( jPasswordField1.getPassword(), jPasswordField2.getPassword()) ){ 
             String pass=Utils.crypt(jPasswordField1.getPassword());
             User user=new User(jTextField4.getText(), jTextField3.getText(), jTextField5.getText(),pass);
             RequestHandler.createUser(user);
-            //add a confirm pop up
+            JOptionPane.showMessageDialog(this,"Registrazione avvenuta con successo");
         }
         else{
-            // fail pop up
+            JOptionPane.showMessageDialog(this, "Email già presente o password non uguali", "Errore nella registrazione", JOptionPane.ERROR_MESSAGE);
         }
         
         
