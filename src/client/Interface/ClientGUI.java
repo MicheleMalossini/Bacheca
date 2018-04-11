@@ -12,6 +12,7 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -236,8 +237,10 @@ public class ClientGUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        RequestHandler.createMessage(jTextPane2.getText(),user.getCodice(),timestamp);
+        Calendar calendar = Calendar.getInstance();
+        java.util.Date currentDate = calendar.getTime();
+        java.sql.Date date = new java.sql.Date(currentDate.getTime());
+        RequestHandler.createMessage(jTextPane2.getText(),user.getCodice(),date);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -252,9 +255,7 @@ public class ClientGUI extends javax.swing.JFrame {
         }
         pack();
     }
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -285,6 +286,7 @@ public class ClientGUI extends javax.swing.JFrame {
                 new ClientGUI(us).setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

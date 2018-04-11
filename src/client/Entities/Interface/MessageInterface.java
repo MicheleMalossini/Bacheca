@@ -8,7 +8,8 @@ package client.Entities.Interface;
 import client.Entities.Message;
 import client.Entities.User;
 import client.service.RequestHandler;
-import java.sql.Timestamp;
+import java.util.Calendar;
+
 
 /**
  *
@@ -116,8 +117,10 @@ public class MessageInterface extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        RequestHandler.createComment(jTextField2.getText(), us.getCodice(), mess.getID(), timestamp);
+        Calendar calendar = Calendar.getInstance();
+        java.util.Date currentDate = calendar.getTime();
+        java.sql.Date date = new java.sql.Date(currentDate.getTime());
+        RequestHandler.createComment(jTextField2.getText(), us.getCodice(), mess.getID(), date);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

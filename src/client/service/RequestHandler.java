@@ -19,7 +19,7 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.sql.Date;
-import java.sql.Timestamp;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -31,10 +31,10 @@ import java.util.logging.Logger;
  */
 public class RequestHandler {
     /**
-    * @param i a value that indicate the different type of request
-    * @return a list of message
+    * 
+    * @return lista di messaggi
     */ 
-    public static List<Message> getMessages (int i){    //i=0 lastday,i=1 lastweek,i=2 lastmonth,i=3 allmessage 
+    public static List<Message> getMessages (){    
         try {
             List<Message> list =new ArrayList<>();
             TypeToken<List<Message>> listType = new TypeToken<List<Message>>() {};
@@ -157,7 +157,11 @@ public class RequestHandler {
         }
         return null;
     } 
-    
+    /**
+     * 
+     * @param email l'email dell utente 
+     * @return l'utente con quella email
+     */
     public static User getUserByEmail(String email){
         try{
             Gson gson=new Gson();
@@ -194,9 +198,12 @@ public class RequestHandler {
     } 
     
      /**
-      *
+      * 
+      * @param content il contenuto del messaggio
+      * @param userID l'id del utente
+      * @param date la data in cui è stato scritto
       */
-     public static void createMessage(String content, String userID, Timestamp date) {
+     public static void createMessage(String content, String userID, Date date) {
             Message mess=new Message(content,userID,date);
             Gson gson=new Gson();
             URL url;
@@ -229,7 +236,10 @@ public class RequestHandler {
              }
          
     }
-     
+    /**
+     * 
+     * @param user l'oggetto user che vogliamo madare al server
+     */ 
     public static void createUser(User user){
         Gson gson=new Gson();
         URL url;
@@ -263,8 +273,14 @@ public class RequestHandler {
         }
         
     }
-    
-    public static void createComment( String content, String userID, int messageID, Timestamp date) {
+    /**
+     * 
+     * @param content contenuto del commento
+     * @param userID id dell'utente che ha scritto il commento
+     * @param messageID id del messaggio a cui è riferito il commento
+     * @param date data del commento
+     */
+    public static void createComment( String content, String userID, int messageID, Date date) {
             Comment comment=new Comment(content,userID,messageID,date);
             Gson gson=new Gson();
             URL url;
@@ -297,7 +313,10 @@ public class RequestHandler {
              }
          
     }
-    
+    /**
+     * 
+     * @param id id del messaggio
+     */
     public static void likeMessage(int id){
         URL url;
         
@@ -321,8 +340,12 @@ public class RequestHandler {
         }
         
     }
-    
-    public static void likeComment(int id){
+    /**
+     * 
+     * @param id_c id del commento
+     * @param id_m id del messaggio
+     */
+    public static void likeComment(int id_c,int id_m){
         URL url;
         
         try {

@@ -113,7 +113,7 @@ public class CommentInterface extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        RequestHandler.likeComment(comm.getID());
+        RequestHandler.likeComment(comm.getID(),comm.getMessageID());
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

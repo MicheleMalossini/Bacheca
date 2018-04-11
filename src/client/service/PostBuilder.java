@@ -20,9 +20,14 @@ import javax.swing.JPanel;
  */
 public class PostBuilder {
     
+    
+    /**
+     * 
+     * @return ritorna una lista di jpanel contenete i messaggi con relativi commenti
+     */
     public static List<JPanel> getPost(){
         List<JPanel> post=new ArrayList<>();
-        List<Message> messages=RequestHandler.getMessages(3);
+        List<Message> messages=RequestHandler.getMessages();
         JPanel panel=new JPanel();
         
         for(Message message : messages){
