@@ -64,9 +64,9 @@ public class RequestHandler {
             }
             br.close();
             JsonParser pars=new JsonParser();
-            Object ob = pars.parse(json);
-            JsonObject obj = (JsonObject) ob;
-            JsonArray array=obj.getAsJsonArray("bacheca");
+            //Object ob = pars.parse(json);
+            //JsonObject obj = (JsonObject) ob;
+            JsonArray array=(JsonArray)pars.parse(json);
             for(JsonElement e:array){
                 list.add(gson.fromJson(e, Message.class));
                 
