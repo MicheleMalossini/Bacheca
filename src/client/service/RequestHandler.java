@@ -42,6 +42,7 @@ public class RequestHandler {
         try {
             List<Message> list =new ArrayList<>();
             //TypeToken<List<Message>> listType = new TypeToken<List<Message>>() {};
+            
             Gson gson=new Gson();
             
             
