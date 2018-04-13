@@ -223,8 +223,9 @@ public class RequestHandler {
             URL url;
             
             try {
-            url = new URL("............"); //percorso server
-       
+            url = new URL("http://192.168.47.3:8888/api/messages"); //percorso server
+                
+                
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");
                 conn.setRequestProperty("Content-Type", "application/json");
@@ -294,8 +295,8 @@ public class RequestHandler {
      * @param messageID id del messaggio a cui è riferito il commento
      * @param date data del commento
      */
-    public static void createComment( String content, String userID, int messageID, Date date) {
-            Comment comment=new Comment(content,userID,messageID,date);
+    public static void createComment( String content, String userID, int messageID) {
+            Comment comment=new Comment(content,userID,messageID);
             Gson gson=new Gson();
             URL url;
             
@@ -335,7 +336,7 @@ public class RequestHandler {
         URL url;
         
         try {
-            url=new URL("  ");//percorso server+id
+            url=new URL("");//percorso server+id
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("PUT");
             conn.setRequestProperty("Content-Type", "application/json");

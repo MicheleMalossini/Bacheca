@@ -18,23 +18,20 @@ public class Comment {
     int like;
     String userID;
     int messageID;
-    Date date;
 
-    public Comment(String content, String userID, int messageID, Date date) {
+    public Comment(String content, String userID, int messageID) {
         this.content = content;
         this.like = 0;
         this.userID = userID;
         this.messageID = messageID;
-        this.date = date;
     }
 
-    public Comment(int ID, String content, int like, String userID, int messageID, Date date) {
+    public Comment(int ID, String content, int like, String userID, int messageID) {
         this.ID = ID;
         this.content = content;
         this.like = like;
         this.userID = userID;
         this.messageID = messageID;
-        this.date = date;
     }
     
     public int getID() {
@@ -57,9 +54,6 @@ public class Comment {
         return messageID;
     }
 
-    public Date getDate() {
-        return date;
-    }
     
     
 }

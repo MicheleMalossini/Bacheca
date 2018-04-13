@@ -120,7 +120,7 @@ public class MessageInterface extends javax.swing.JPanel {
         Calendar calendar = Calendar.getInstance();
         java.util.Date currentDate = calendar.getTime();
         java.sql.Date date = new java.sql.Date(currentDate.getTime());
-        RequestHandler.createComment(jTextField2.getText(), us.getCodice(), mess.getID(), date);
+        RequestHandler.createComment(jTextField2.getText(), us.getCodice(), mess.getID());
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
