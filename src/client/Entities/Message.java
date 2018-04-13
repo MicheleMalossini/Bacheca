@@ -27,17 +27,9 @@ public class Message {
         this.date = date;
     }
     
-
     public Message(String content, String userID){
         this.content = content;
         this.userID = userID;
-    }
-    public Message(String content, String userID, Date date){
-        this.content = content;
-        this.like = 0;
-        this.userID = userID;
-        this.date = date;
-
     }
 
     public String getContent() {
