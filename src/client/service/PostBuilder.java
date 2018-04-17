@@ -10,6 +10,8 @@ import client.Entities.Interface.CommentInterface;
 import client.Entities.Interface.MessageInterface;
 import client.Entities.Message;
 import client.Entities.User;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JPanel;
@@ -29,6 +31,8 @@ public class PostBuilder {
         List<JPanel> post=new ArrayList<>();
         List<Message> messages=RequestHandler.getMessages();
         JPanel panel=new JPanel();
+        panel.setPreferredSize(new Dimension(516,100));
+        panel.setBackground(Color.DARK_GRAY);
         
         for(Message message : messages){
             MessageInterface mess=new MessageInterface(message);

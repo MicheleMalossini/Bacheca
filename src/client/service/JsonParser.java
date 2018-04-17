@@ -25,10 +25,10 @@ public class JsonParser {
         JSONArray arr=obj.getJSONArray("array");
         for(int i=0;i<arr.length();i++){
             Message m=new Message(
-                    arr.getJSONObject(i).getInt("ID"),
-                    arr.getJSONObject(i).getString("content"),
-                    arr.getJSONObject(i).getInt("like"),
-                    arr.getJSONObject(i).getString("userID"),
+                    arr.getJSONObject(i).getInt("id"),
+                    arr.getJSONObject(i).getString("contenuto"),
+                    arr.getJSONObject(i).getInt("n_like"),
+                    arr.getJSONObject(i).getString("cod_utente"),
                     null //convertire string date dal server a date
             );
             list.add(m);
@@ -43,11 +43,11 @@ public class JsonParser {
         JSONArray arr=obj.getJSONArray("array");
         for(int i=0;i<arr.length();i++){
             Comment c=new Comment(
-                    arr.getJSONObject(i).getInt("ID"),
-                    arr.getJSONObject(i).getString("content"),
-                    arr.getJSONObject(i).getInt("like"),
-                    arr.getJSONObject(i).getString("userID"),
-                    arr.getJSONObject(i).getInt("messageID")
+                    arr.getJSONObject(i).getInt("id"),
+                    arr.getJSONObject(i).getString("contenuto"),
+                    arr.getJSONObject(i).getInt("n_like"),
+                    arr.getJSONObject(i).getString("cod_utente"),
+                    arr.getJSONObject(i).getInt("id_m")
             );
             list.add(c);
         }
