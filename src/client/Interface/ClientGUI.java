@@ -74,7 +74,7 @@ public class ClientGUI extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(641, 807));
+        setMinimumSize(new java.awt.Dimension(641, 798));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(142, 174, 255));

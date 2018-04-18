@@ -29,7 +29,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[641, 807]"/>
+      <Dimension value="[641, 798]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>

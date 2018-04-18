@@ -13,45 +13,45 @@ import java.sql.Date;
  * @author MM
  */
 public class Comment {
-    int ID;
-    String content;
-    int like;
-    String userID;
-    int messageID;
+    int id;
+    String contenuto;
+    int n_like;
+    String cod_utente;
+    int id_m;
 
-    public Comment(String content, String userID, int messageID) {
-        this.content = content;
-        this.like = 0;
-        this.userID = userID;
-        this.messageID = messageID;
+    public Comment(String contenuto, String cod_utente, int id_m) {
+        this.contenuto = contenuto;
+        this.n_like = 0;
+        this.cod_utente = cod_utente;
+        this.id_m = id_m;
     }
 
-    public Comment(int ID, String content, int like, String userID, int messageID) {
-        this.ID = ID;
-        this.content = content;
-        this.like = like;
-        this.userID = userID;
-        this.messageID = messageID;
+    public Comment(int id, String contenuto, int n_like, String cod_utente, int id_m) {
+        this.id = id;
+        this.contenuto = contenuto;
+        this.n_like = n_like;
+        this.cod_utente = cod_utente;
+        this.id_m = id_m;
     }
     
     public int getID() {
-        return ID;
+        return id;
     }
 
     public String getContent() {
-        return content;
+        return contenuto;
     }
 
     public int getLike() {
-        return like;
+        return n_like;
     }
 
     public String getUserID() {
-        return userID;
+        return cod_utente;
     }
 
     public int getMessageID() {
-        return messageID;
+        return id_m;
     }
 
     

@@ -117,7 +117,6 @@ public class RequestHandler {
      */ 
     public static User getUserByID(String ID){
         try{
-            Gson gson=new Gson();
             URL url = new URL(URL+"/users/" + ID);//percorso server + messageID
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -137,10 +136,8 @@ public class RequestHandler {
             }
             br.close();
             conn.disconnect();
-            //System.out.println(json);
-            User user=gson.fromJson(sb.toString(), User.class);
             
-            return user;
+            return client.service.JsonParser.getUserFromJson(sb.toString());
             
         } catch (MalformedURLException ex) {
             Logger.getLogger(RequestHandler.class.getName()).log(Level.SEVERE, null, ex);
@@ -203,7 +200,7 @@ public class RequestHandler {
                 url = new URL(URL+"/messages"); //percorso server
                
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setDoInput(true);
+                conn.setDoOutput(true);
                 conn.setRequestMethod("POST");
                 conn.setRequestProperty("Content-Type", "application/json");
 
@@ -239,7 +236,7 @@ public class RequestHandler {
         try {
             url=new URL(URL+""); //percorso server
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setDoInput(true);
+            conn.setDoOutput(true);
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
             
@@ -282,7 +279,7 @@ public class RequestHandler {
             url = new URL(URL+"/messages/"+ messageID + "/comments"); //percorso server
        
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setDoInput(true);
+                conn.setDoOutput(true);
                 conn.setRequestMethod("POST");
                 conn.setRequestProperty("Content-Type", "application/json");
 

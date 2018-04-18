@@ -10,41 +10,41 @@ package client.Entities;
  * @author MM
  */
 public class User {
-    String codice;
-    String name;
-    String surname;
-    String email;
+    String cod_alfanum;
+    String nome;
+    String cognome;
+    String mail;
     String password;
 
-    public User(String codice,String name, String surname,String email, String password) {
-        this.codice=codice;
-        this.name = name;
-        this.surname = surname;
-        this.email=email;
+    public User(String cod_alfanum,String nome, String cognome,String mail, String password) {
+        this.cod_alfanum=cod_alfanum;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.mail=mail;
         this.password = password;
     }
     
-     public User(String name, String surname,String email, String password) {
-        this.name = name;
-        this.surname = surname;
-        this.email=email;
+     public User(String nome, String cognome,String mail, String password) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.mail=mail;
         this.password = password;
     }
 
     public String getCodice() {
-        return codice;
+        return cod_alfanum;
     }
 
     public String getEmail() {
-        return email;
+        return mail;
     }
 
     public String getName() {
-        return name;
+        return nome;
     }
 
     public String getSurname() {
-        return surname;
+        return cognome;
     }
 
     public String getPassword() {
