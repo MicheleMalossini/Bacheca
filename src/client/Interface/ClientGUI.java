@@ -35,6 +35,7 @@ public class ClientGUI extends javax.swing.JFrame {
         this.user=user;
         initComponents();
         jTextField1.setText(user.getName() + " " + user.getSurname());
+        refresh();
     }
 
     /**
@@ -263,7 +264,7 @@ public class ClientGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ClientGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        User us=new User("1","michele","malossini","prova@mail","6e6bc4e49dd477ebc98ef4046c067b5f");
+        User us=new User(1,"michele","malossini","prova@mail","6e6bc4e49dd477ebc98ef4046c067b5f");
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

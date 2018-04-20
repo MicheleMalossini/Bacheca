@@ -33,7 +33,7 @@ import java.util.logging.Logger;
  */
 public class RequestHandler {
     
-    private static String URL="http://localhost:8888/api";
+    private static String URL="http://192.168.47.3:8888/api";
     /**
     * 
     * @return lista di messaggi
@@ -115,7 +115,7 @@ public class RequestHandler {
      * @param ID id dell'utente
      * @return l'utente con quel id
      */ 
-    public static User getUserByID(String ID){
+    public static User getUserByID(int ID){
         try{
             URL url = new URL(URL+"/users/" + ID);//percorso server + messageID
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -191,7 +191,7 @@ public class RequestHandler {
       * @param userID l'id del utente
       * @param date la data in cui è stato scritto
       */
-     public static void createMessage(String content, String userID) {
+     public static void createMessage(String content, int userID) {
             Message mess=new Message(content,userID);
             Gson gson=new Gson();
             URL url;
@@ -270,7 +270,7 @@ public class RequestHandler {
      * @param messageID id del messaggio a cui è riferito il commento
      * @param date data del commento
      */
-    public static void createComment( String content, String userID, int messageID) {
+    public static void createComment( String content, int userID, int messageID) {
             Comment comment=new Comment(content,userID,messageID);
             Gson gson=new Gson();
             URL url;
@@ -312,7 +312,7 @@ public class RequestHandler {
         URL url;
         
         try {
-            url=new URL(URL+"");//percorso server+id
+            url=new URL(URL+"/messages/"+id);//percorso server+id
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("PUT");
             conn.setRequestProperty("Content-Type", "application/json");
@@ -340,7 +340,7 @@ public class RequestHandler {
         URL url;
         
         try {
-            url=new URL(URL+" ");//percorso server+id
+            url=new URL(URL+"/messages7"+id_m+"/comments/" + id_c);//percorso server+id
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("PUT");
             conn.setRequestProperty("Content-Type", "application/json");

@@ -28,7 +28,7 @@ public class JsonParser {
                     arr.getJSONObject(i).getInt("id"),
                     arr.getJSONObject(i).getString("contenuto"),
                     arr.getJSONObject(i).getInt("n_like"),
-                    arr.getJSONObject(i).getString("cod_utente"),
+                    arr.getJSONObject(i).getInt("cod_utente"),
                     null //convertire string date dal server a date
             );
             list.add(m);
@@ -46,7 +46,7 @@ public class JsonParser {
                     arr.getJSONObject(i).getInt("id"),
                     arr.getJSONObject(i).getString("contenuto"),
                     arr.getJSONObject(i).getInt("n_like"),
-                    arr.getJSONObject(i).getString("cod_utente"),
+                    arr.getJSONObject(i).getInt("cod_utente"),
                     arr.getJSONObject(i).getInt("id_m")
             );
             list.add(c);
@@ -58,7 +58,7 @@ public class JsonParser {
     public static User getUserFromJson(String json){
         JSONObject obj=new JSONObject(json);
         User us=new User(
-                obj.getString("cod_alfanum"),
+                obj.getInt("cod_alfanum"),
                 obj.getString("nome"),
                 obj.getString("cognome"),
                 obj.getString("mail"),

@@ -16,17 +16,17 @@ public class Comment {
     int id;
     String contenuto;
     int n_like;
-    String cod_utente;
+    int cod_utente;
     int id_m;
 
-    public Comment(String contenuto, String cod_utente, int id_m) {
+    public Comment(String contenuto, int cod_utente, int id_m) {
         this.contenuto = contenuto;
         this.n_like = 0;
         this.cod_utente = cod_utente;
         this.id_m = id_m;
     }
 
-    public Comment(int id, String contenuto, int n_like, String cod_utente, int id_m) {
+    public Comment(int id, String contenuto, int n_like, int cod_utente, int id_m) {
         this.id = id;
         this.contenuto = contenuto;
         this.n_like = n_like;
@@ -46,7 +46,7 @@ public class Comment {
         return n_like;
     }
 
-    public String getUserID() {
+    public int getUserID() {
         return cod_utente;
     }
 

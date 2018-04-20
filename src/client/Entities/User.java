@@ -10,13 +10,13 @@ package client.Entities;
  * @author MM
  */
 public class User {
-    String cod_alfanum;
+    int cod_alfanum;
     String nome;
     String cognome;
     String mail;
     String password;
 
-    public User(String cod_alfanum,String nome, String cognome,String mail, String password) {
+    public User(int cod_alfanum,String nome, String cognome,String mail, String password) {
         this.cod_alfanum=cod_alfanum;
         this.nome = nome;
         this.cognome = cognome;
@@ -31,7 +31,7 @@ public class User {
         this.password = password;
     }
 
-    public String getCodice() {
+    public int getCodice() {
         return cod_alfanum;
     }
 

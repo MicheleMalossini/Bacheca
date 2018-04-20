@@ -15,10 +15,10 @@ public class Message {
     int id;
     String contenuto;
     int n_like;
-    String cod_utente;
+    int cod_utente;
     Date date;
 
-    public Message(int id,String contenuto,int n_like, String cod_utente, Date date) {
+    public Message(int id,String contenuto,int n_like, int cod_utente, Date date) {
         this.id=id;
         this.contenuto = contenuto;
         this.n_like = n_like;
@@ -26,7 +26,7 @@ public class Message {
         this.date = date;
     }
     
-    public Message(String contenuto, String cod_utente){
+    public Message(String contenuto, int cod_utente){
         this.contenuto = contenuto;
         this.cod_utente = cod_utente;
     }
@@ -40,7 +40,7 @@ public class Message {
         return n_like;
     }
 
-    public String getUserID() {
+    public int getUserID() {
         return cod_utente;
     }
 
@@ -60,7 +60,7 @@ public class Message {
         this.n_like = n_like;
     }
 
-    public void setUserID(String cod_utente) {
+    public void setUserID(int cod_utente) {
         this.cod_utente = cod_utente;
     }
 
