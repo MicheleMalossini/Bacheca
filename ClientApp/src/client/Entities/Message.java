@@ -12,30 +12,36 @@ import java.sql.Date;
  * @author MM
  */
 public class Message {
-    int ID;
-    String content;
-    int like;
-    int userID;
+    int id;
+    String contenuto;
+    int n_like;
+    int cod_utente;
     Date date;
 
-    public Message(int ID,String content, int like, int userID, Date date) {
-        this.ID=ID;
-        this.content = content;
-        this.like = like;
-        this.userID = userID;
+    public Message(int id,String contenuto,int n_like, int cod_utente, Date date) {
+        this.id=id;
+        this.contenuto = contenuto;
+        this.n_like = n_like;
+        this.cod_utente = cod_utente;
         this.date = date;
     }
+    
+    public Message(String contenuto, int cod_utente){
+        this.contenuto = contenuto;
+        this.cod_utente = cod_utente;
+    }
+
 
     public String getContent() {
-        return content;
+        return contenuto;
     }
 
     public int getLike() {
-        return like;
+        return n_like;
     }
 
     public int getUserID() {
-        return userID;
+        return cod_utente;
     }
 
     public Date getDate() {
@@ -43,19 +49,19 @@ public class Message {
     }
     
     public int getID() {
-        return ID;
+        return id;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setContent(String contenuto) {
+        this.contenuto = contenuto;
     }
 
-    public void setLike(int like) {
-        this.like = like;
+    public void setLike(int n_like) {
+        this.n_like = n_like;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUserID(int cod_utente) {
+        this.cod_utente = cod_utente;
     }
 
     public void setDate(Date date) {

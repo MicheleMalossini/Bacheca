@@ -6,51 +6,54 @@
 package client.Entities;
 
 import java.sql.Date;
+import java.sql.Date;
 
 /**
  *
  * @author MM
  */
 public class Comment {
-    int ID;
-    String content;
-    int like;
-    int userID;
-    int messageID;
-    Date date;
+    int id;
+    String contenuto;
+    int n_like;
+    int cod_utente;
+    int id_m;
 
-    public Comment(int ID, String content, int like, int userID, int messageID, Date date) {
-        this.ID = ID;
-        this.content = content;
-        this.like = like;
-        this.userID = userID;
-        this.messageID = messageID;
-        this.date = date;
+    public Comment(String contenuto, int cod_utente, int id_m) {
+        this.contenuto = contenuto;
+        this.n_like = 0;
+        this.cod_utente = cod_utente;
+        this.id_m = id_m;
     }
 
+    public Comment(int id, String contenuto, int n_like, int cod_utente, int id_m) {
+        this.id = id;
+        this.contenuto = contenuto;
+        this.n_like = n_like;
+        this.cod_utente = cod_utente;
+        this.id_m = id_m;
+    }
+    
     public int getID() {
-        return ID;
+        return id;
     }
 
     public String getContent() {
-        return content;
+        return contenuto;
     }
 
     public int getLike() {
-        return like;
+        return n_like;
     }
 
     public int getUserID() {
-        return userID;
+        return cod_utente;
     }
 
     public int getMessageID() {
-        return messageID;
+        return id_m;
     }
 
-    public Date getDate() {
-        return date;
-    }
     
     
 }

@@ -8,6 +8,7 @@ package client.Interface;
 import client.Entities.User;
 import client.service.RequestHandler;
 import client.service.Utils;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -50,8 +51,8 @@ public class Login extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jPasswordField3 = new javax.swing.JPasswordField();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -175,14 +176,14 @@ public class Login extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(86, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(73, 73, 73)
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1))
+                    .addComponent(jPasswordField3))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -195,7 +196,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jButton1)
                 .addContainerGap(86, Short.MAX_VALUE))
@@ -234,10 +235,13 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        User us=RequestHandler.getUserByEmail(jTextField5.getText());
-        if(us != null){
+        User us=RequestHandler.getUserByEmail(jTextField1.getText());
+        if(us != null && (us.getPassword().equals(Utils.crypt(jPasswordField3.getPassword())))){
             this.setVisible(false);
-             new ClientGUI(us).setVisible(true);
+            new ClientGUI(us).setVisible(true);
+        }
+        else{
+            System.out.println("fallito");
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -245,10 +249,15 @@ public class Login extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         User us=RequestHandler.getUserByEmail(jTextField5.getText());
-        if(us != null){ //check password need to be added
-            User user=new User(jTextField4.getText(), jTextField3.getText(), jTextField5.getText(), jPasswordField1.getText());
+      
+        if(us == null && Utils.checkPassword( jPasswordField1.getPassword(), jPasswordField2.getPassword()) ){ 
+            String pass=Utils.crypt(jPasswordField1.getPassword());
+            User user=new User(jTextField4.getText(), jTextField3.getText(), jTextField5.getText(),pass);
             RequestHandler.createUser(user);
-            //add a confirm pop up
+            JOptionPane.showMessageDialog(this,"Registrazione avvenuta con successo");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Email già presente o password non uguali", "Errore nella registrazione", JOptionPane.ERROR_MESSAGE);
         }
         
         
@@ -309,9 +318,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
